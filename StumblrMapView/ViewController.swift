@@ -81,11 +81,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         if let annotation = annotation as? PinAnnotation {
             let identifier = "pin"
             var view: MKPinAnnotationView
-            if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
+            /*if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
                 as? MKPinAnnotationView {
                     dequeuedView.annotation = annotation
                     view = dequeuedView
-            } else {
+            } else {*/
                 view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.canShowCallout = true
                 view.calloutOffset = CGPoint(x: -5, y: 5)
@@ -97,7 +97,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                 let userImage = UIImage(data: data!)
                 var leftIconView = UIImageView(image: userImage)
                 view.leftCalloutAccessoryView = leftIconView
-            }
+           // }
             return view
         }
         return nil
@@ -109,7 +109,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
 
     @IBAction func onMatchValueChanged(sender: AnyObject) {
-        mapView.removeAnnotation(<#annotation: MKAnnotation!#>)
+       //mapView.removeAnnotations(mapView.annotations)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
