@@ -13,6 +13,7 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var matchSlider: UISlider!
     var imageView:UIImage!
     
     let initialLocation = CLLocation(latitude: 37.775, longitude: -122.418)
@@ -59,6 +60,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             
             var interests = [String]()
             interests.append("\(index)")
+            interests.append("\(index+1)")
             
             var point = PinAnnotation(title: "Friend \(index)", locationName: "Home", discipline: "Poker", coordinate: locationArray[index-1], interests: interests)
             
@@ -88,7 +90,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                 view.canShowCallout = true
                 view.calloutOffset = CGPoint(x: -5, y: 5)
                 view.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as! UIView
-                view.image = annotation.getMatchingInterestsWithUser(["2", "3", "4"])
+                view.image = annotation.getPinImageOfFriend(["2", "3", "4"], matchSliderValue: self.matchSlider.value)
                 
                 let imageURL = NSURL(string:"http://pbs.twimg.com/profile_images/2284174872/7df3h38zabcvjylnyfe3_mini.png")
                 let data = NSData(contentsOfURL: imageURL!)
@@ -106,6 +108,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         performSegueWithIdentifier("profileSegue", sender: friend)
     }
 
+    @IBAction func onMatchValueChanged(sender: AnyObject) {
+        mapView.removeAnnotation(<#annotation: MKAnnotation!#>)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

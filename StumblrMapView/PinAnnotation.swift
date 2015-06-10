@@ -29,11 +29,13 @@ class PinAnnotation: NSObject, MKAnnotation {
         return locationName
     }
     
-    func getMatchingInterestsWithUser(userInterests: [String]) -> UIImage {
+    func getPinImageOfFriend(userInterests: [String], matchSliderValue: Float) -> UIImage {
         println("Value from User: \(userInterests)")
         println("Value from Friends: \(self.interests)")
         
         var numInterests = 0
+        var pinColor: String
+        var alphaValue: CGFloat
         
         for userInterest in userInterests {
             if contains(self.interests, userInterest) {
@@ -41,7 +43,14 @@ class PinAnnotation: NSObject, MKAnnotation {
             }
         }
         
-        var pinColor: String
+        
+        if Float(numInterests) < matchSliderValue * 4 {
+            alphaValue = 0.05
+        } else {
+            alphaValue = 1
+        }
+        
+        
         
         switch numInterests {
         case 0:
@@ -60,6 +69,7 @@ class PinAnnotation: NSObject, MKAnnotation {
             pinColor = "pinGreen.png"
         }
         
-        return UIImage(named: pinColor)!
+        let image = UIImage(named: pinColor)?.alpha(alphaValue)
+        return image!
     }
 }

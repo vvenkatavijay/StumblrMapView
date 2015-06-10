@@ -19,12 +19,20 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zUn-wM-Jze">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
+                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="aXC-UD-kvv">
+                                <rect key="frame" x="241" y="513" width="118" height="31"/>
+                                <connections>
+                                    <action selector="onMatchValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="LAl-gT-gqf"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zUn-wM-Jze" secondAttribute="bottom" id="Fqm-wk-og6"/>
                             <constraint firstAttribute="trailing" secondItem="zUn-wM-Jze" secondAttribute="trailing" id="Mf4-yj-0Yw"/>
+                            <constraint firstAttribute="centerX" secondItem="aXC-UD-kvv" secondAttribute="centerX" id="OEi-QE-huc"/>
                             <constraint firstItem="zUn-wM-Jze" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hqG-Hf-umu"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aXC-UD-kvv" secondAttribute="bottom" constant="30" id="oN8-hR-wRS"/>
                             <constraint firstItem="zUn-wM-Jze" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="txo-9m-PIk"/>
                         </constraints>
                     </view>
@@ -32,6 +40,7 @@
                     <navigationItem key="navigationItem" id="KlJ-XY-2aJ"/>
                     <connections>
                         <outlet property="mapView" destination="zUn-wM-Jze" id="E61-2s-kZ1"/>
+                        <outlet property="matchSlider" destination="aXC-UD-kvv" id="mNo-hW-3W1"/>
                         <segue destination="6Oe-vJ-9QR" kind="show" identifier="profileSegue" id="ojz-EM-kQF"/>
                     </connections>
                 </viewController>
@@ -54,7 +63,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the profile page" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pl7-uS-NN0">
                                 <rect key="frame" x="213" y="289" width="174" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
