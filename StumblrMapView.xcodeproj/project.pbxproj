@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B19538021B285A04005AA0FA /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19538011B285A04005AA0FA /* UIImageExtension.swift */; };
+		B19538081B285E2B005AA0FA /* pinGray.png in Resources */ = {isa = PBXBuildFile; fileRef = B19538031B285E2B005AA0FA /* pinGray.png */; };
+		B19538091B285E2B005AA0FA /* pinGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = B19538041B285E2B005AA0FA /* pinGreen.png */; };
+		B195380A1B285E2B005AA0FA /* pinOrange.png in Resources */ = {isa = PBXBuildFile; fileRef = B19538051B285E2B005AA0FA /* pinOrange.png */; };
+		B195380B1B285E2B005AA0FA /* pinPurple.png in Resources */ = {isa = PBXBuildFile; fileRef = B19538061B285E2B005AA0FA /* pinPurple.png */; };
+		B195380C1B285E2B005AA0FA /* pinRed.png in Resources */ = {isa = PBXBuildFile; fileRef = B19538071B285E2B005AA0FA /* pinRed.png */; };
 		B19FD94B1B2161C6003C08CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19FD94A1B2161C6003C08CA /* AppDelegate.swift */; };
 		B19FD94D1B2161C6003C08CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19FD94C1B2161C6003C08CA /* ViewController.swift */; };
 		B19FD9501B2161C6003C08CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B19FD94E1B2161C6003C08CA /* Main.storyboard */; };
@@ -32,6 +38,12 @@
 		344A7E2370CA28C6AF8B504C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A919B3CDADA36416B184318 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A08C915B636408F00C8CEC6B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B19538011B285A04005AA0FA /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		B19538031B285E2B005AA0FA /* pinGray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinGray.png; sourceTree = "<group>"; };
+		B19538041B285E2B005AA0FA /* pinGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinGreen.png; sourceTree = "<group>"; };
+		B19538051B285E2B005AA0FA /* pinOrange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinOrange.png; sourceTree = "<group>"; };
+		B19538061B285E2B005AA0FA /* pinPurple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinPurple.png; sourceTree = "<group>"; };
+		B19538071B285E2B005AA0FA /* pinRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinRed.png; sourceTree = "<group>"; };
 		B19FD9451B2161C6003C08CA /* StumblrMapView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StumblrMapView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B19FD9491B2161C6003C08CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B19FD94A1B2161C6003C08CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +113,7 @@
 			children = (
 				B19FD94A1B2161C6003C08CA /* AppDelegate.swift */,
 				B19FD94C1B2161C6003C08CA /* ViewController.swift */,
+				B19538011B285A04005AA0FA /* UIImageExtension.swift */,
 				B19FD96A1B235B22003C08CA /* PinAnnotation.swift */,
 				B19FD96F1B23CEBD003C08CA /* PersonProfileView.swift */,
 				B19FD94E1B2161C6003C08CA /* Main.storyboard */,
@@ -114,6 +127,11 @@
 		B19FD9481B2161C6003C08CA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B19538031B285E2B005AA0FA /* pinGray.png */,
+				B19538041B285E2B005AA0FA /* pinGreen.png */,
+				B19538051B285E2B005AA0FA /* pinOrange.png */,
+				B19538061B285E2B005AA0FA /* pinPurple.png */,
+				B19538071B285E2B005AA0FA /* pinRed.png */,
 				B19FD9491B2161C6003C08CA /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -226,9 +244,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B19538081B285E2B005AA0FA /* pinGray.png in Resources */,
+				B195380A1B285E2B005AA0FA /* pinOrange.png in Resources */,
 				B19FD9501B2161C6003C08CA /* Main.storyboard in Resources */,
 				B19FD9551B2161C6003C08CA /* LaunchScreen.xib in Resources */,
 				B19FD9521B2161C6003C08CA /* Images.xcassets in Resources */,
+				B19538091B285E2B005AA0FA /* pinGreen.png in Resources */,
+				B195380B1B285E2B005AA0FA /* pinPurple.png in Resources */,
+				B195380C1B285E2B005AA0FA /* pinRed.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +305,7 @@
 				B19FD94D1B2161C6003C08CA /* ViewController.swift in Sources */,
 				B19FD9701B23CEBD003C08CA /* PersonProfileView.swift in Sources */,
 				B19FD96B1B235B22003C08CA /* PinAnnotation.swift in Sources */,
+				B19538021B285A04005AA0FA /* UIImageExtension.swift in Sources */,
 				B19FD94B1B2161C6003C08CA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

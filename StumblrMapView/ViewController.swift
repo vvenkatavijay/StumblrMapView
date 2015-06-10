@@ -57,7 +57,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     func addPoints() {
         for index in 1...5 {
             
-            var point = PinAnnotation(title: "Friend \(index)", locationName: "Home", discipline: "Poker", coordinate: locationArray[index-1])
+            var interests = [String]()
+            interests.append("\(index)")
+            
+            var point = PinAnnotation(title: "Friend \(index)", locationName: "Home", discipline: "Poker", coordinate: locationArray[index-1], interests: interests)
             
             self.mapView.addAnnotation(point)
         }
@@ -85,10 +88,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                 view.canShowCallout = true
                 view.calloutOffset = CGPoint(x: -5, y: 5)
                 view.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as! UIView
+                view.image = annotation.getMatchingInterestsWithUser(["2", "3", "4"])
+                
                 let imageURL = NSURL(string:"http://pbs.twimg.com/profile_images/2284174872/7df3h38zabcvjylnyfe3_mini.png")
                 let data = NSData(contentsOfURL: imageURL!)
                 let userImage = UIImage(data: data!)
-                
                 var leftIconView = UIImageView(image: userImage)
                 view.leftCalloutAccessoryView = leftIconView
             }
