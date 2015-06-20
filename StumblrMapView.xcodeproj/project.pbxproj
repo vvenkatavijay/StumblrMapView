@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B12377811B32337F00EC7934 /* SliderImage.png in Resources */ = {isa = PBXBuildFile; fileRef = B12377801B32337F00EC7934 /* SliderImage.png */; };
+		B12377831B325CA900EC7934 /* 000000-0.png in Resources */ = {isa = PBXBuildFile; fileRef = B12377821B325CA900EC7934 /* 000000-0.png */; };
+		B12377851B32672C00EC7934 /* darkest.png in Resources */ = {isa = PBXBuildFile; fileRef = B12377841B32672C00EC7934 /* darkest.png */; };
+		B12377891B32689300EC7934 /* darker.png in Resources */ = {isa = PBXBuildFile; fileRef = B12377861B32689300EC7934 /* darker.png */; };
+		B123778A1B32689300EC7934 /* light.png in Resources */ = {isa = PBXBuildFile; fileRef = B12377871B32689300EC7934 /* light.png */; };
+		B123778B1B32689300EC7934 /* lighter.png in Resources */ = {isa = PBXBuildFile; fileRef = B12377881B32689300EC7934 /* lighter.png */; };
+		B123778F1B326A0600EC7934 /* SliderImageBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = B123778E1B326A0600EC7934 /* SliderImageBlue.png */; };
+		B12377921B326A7A00EC7934 /* StumblrDarkBlueMapPin.png in Resources */ = {isa = PBXBuildFile; fileRef = B12377911B326A7A00EC7934 /* StumblrDarkBlueMapPin.png */; };
+		B12377941B32725C00EC7934 /* ProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12377931B32725C00EC7934 /* ProfileCardView.swift */; };
+		B181D2C71B3414EB0098B7C2 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = B181D2C61B3414EB0098B7C2 /* user.png */; };
 		B19538021B285A04005AA0FA /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19538011B285A04005AA0FA /* UIImageExtension.swift */; };
 		B19538081B285E2B005AA0FA /* pinGray.png in Resources */ = {isa = PBXBuildFile; fileRef = B19538031B285E2B005AA0FA /* pinGray.png */; };
 		B19538091B285E2B005AA0FA /* pinGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = B19538041B285E2B005AA0FA /* pinGreen.png */; };
@@ -20,7 +30,7 @@
 		B19FD9551B2161C6003C08CA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B19FD9531B2161C6003C08CA /* LaunchScreen.xib */; };
 		B19FD9611B2161C6003C08CA /* StumblrMapViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19FD9601B2161C6003C08CA /* StumblrMapViewTests.swift */; };
 		B19FD96B1B235B22003C08CA /* PinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19FD96A1B235B22003C08CA /* PinAnnotation.swift */; };
-		B19FD9701B23CEBD003C08CA /* PersonProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19FD96F1B23CEBD003C08CA /* PersonProfileView.swift */; };
+		B1A670901B35380C0063B3D7 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = B1A6708F1B35380C0063B3D7 /* twitter.png */; };
 		E02EA73ACF0C3D483FB4AFBF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 344A7E2370CA28C6AF8B504C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +48,16 @@
 		344A7E2370CA28C6AF8B504C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A919B3CDADA36416B184318 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A08C915B636408F00C8CEC6B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B12377801B32337F00EC7934 /* SliderImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SliderImage.png; path = ../../../../Downloads/SliderImage.png; sourceTree = "<group>"; };
+		B12377821B325CA900EC7934 /* 000000-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "000000-0.png"; path = "../../../../Downloads/000000-0.png"; sourceTree = "<group>"; };
+		B12377841B32672C00EC7934 /* darkest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = darkest.png; path = ../../../../Downloads/darkest.png; sourceTree = "<group>"; };
+		B12377861B32689300EC7934 /* darker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = darker.png; path = ../../../../Downloads/darker.png; sourceTree = "<group>"; };
+		B12377871B32689300EC7934 /* light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = light.png; path = ../../../../Downloads/light.png; sourceTree = "<group>"; };
+		B12377881B32689300EC7934 /* lighter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lighter.png; path = ../../../../Downloads/lighter.png; sourceTree = "<group>"; };
+		B123778E1B326A0600EC7934 /* SliderImageBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SliderImageBlue.png; path = ../../../../Downloads/SliderImageBlue.png; sourceTree = "<group>"; };
+		B12377911B326A7A00EC7934 /* StumblrDarkBlueMapPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StumblrDarkBlueMapPin.png; path = ../../../../Downloads/StumblrDarkBlueMapPin.png; sourceTree = "<group>"; };
+		B12377931B32725C00EC7934 /* ProfileCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCardView.swift; sourceTree = "<group>"; };
+		B181D2C61B3414EB0098B7C2 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		B19538011B285A04005AA0FA /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		B19538031B285E2B005AA0FA /* pinGray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinGray.png; sourceTree = "<group>"; };
 		B19538041B285E2B005AA0FA /* pinGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinGreen.png; sourceTree = "<group>"; };
@@ -56,7 +76,7 @@
 		B19FD9601B2161C6003C08CA /* StumblrMapViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StumblrMapViewTests.swift; sourceTree = "<group>"; };
 		B19FD96A1B235B22003C08CA /* PinAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinAnnotation.swift; sourceTree = "<group>"; };
 		B19FD96C1B23668A003C08CA /* StumblrMapView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StumblrMapView-Bridging-Header.h"; sourceTree = "<group>"; };
-		B19FD96F1B23CEBD003C08CA /* PersonProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonProfileView.swift; sourceTree = "<group>"; };
+		B1A6708F1B35380C0063B3D7 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +107,35 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B123778D1B3269C600EC7934 /* NewIMages */ = {
+			isa = PBXGroup;
+			children = (
+				B123778E1B326A0600EC7934 /* SliderImageBlue.png */,
+				B12377861B32689300EC7934 /* darker.png */,
+				B12377841B32672C00EC7934 /* darkest.png */,
+				B12377881B32689300EC7934 /* lighter.png */,
+				B12377871B32689300EC7934 /* light.png */,
+			);
+			name = NewIMages;
+			sourceTree = "<group>";
+		};
+		B12377901B326A5C00EC7934 /* LongPins */ = {
+			isa = PBXGroup;
+			children = (
+				B12377911B326A7A00EC7934 /* StumblrDarkBlueMapPin.png */,
+			);
+			name = LongPins;
+			sourceTree = "<group>";
+		};
+		B181D2C51B3414A00098B7C2 /* ProfilePictureImages */ = {
+			isa = PBXGroup;
+			children = (
+				B1A6708F1B35380C0063B3D7 /* twitter.png */,
+				B181D2C61B3414EB0098B7C2 /* user.png */,
+			);
+			name = ProfilePictureImages;
+			sourceTree = "<group>";
+		};
 		B19FD93C1B2161C5003C08CA = {
 			isa = PBXGroup;
 			children = (
@@ -115,7 +164,7 @@
 				B19FD94C1B2161C6003C08CA /* ViewController.swift */,
 				B19538011B285A04005AA0FA /* UIImageExtension.swift */,
 				B19FD96A1B235B22003C08CA /* PinAnnotation.swift */,
-				B19FD96F1B23CEBD003C08CA /* PersonProfileView.swift */,
+				B12377931B32725C00EC7934 /* ProfileCardView.swift */,
 				B19FD94E1B2161C6003C08CA /* Main.storyboard */,
 				B19FD9511B2161C6003C08CA /* Images.xcassets */,
 				B19FD9531B2161C6003C08CA /* LaunchScreen.xib */,
@@ -127,6 +176,11 @@
 		B19FD9481B2161C6003C08CA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B181D2C51B3414A00098B7C2 /* ProfilePictureImages */,
+				B12377901B326A5C00EC7934 /* LongPins */,
+				B123778D1B3269C600EC7934 /* NewIMages */,
+				B12377821B325CA900EC7934 /* 000000-0.png */,
+				B12377801B32337F00EC7934 /* SliderImage.png */,
 				B19538031B285E2B005AA0FA /* pinGray.png */,
 				B19538041B285E2B005AA0FA /* pinGreen.png */,
 				B19538051B285E2B005AA0FA /* pinOrange.png */,
@@ -244,14 +298,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B12377851B32672C00EC7934 /* darkest.png in Resources */,
+				B1A670901B35380C0063B3D7 /* twitter.png in Resources */,
+				B12377831B325CA900EC7934 /* 000000-0.png in Resources */,
 				B19538081B285E2B005AA0FA /* pinGray.png in Resources */,
 				B195380A1B285E2B005AA0FA /* pinOrange.png in Resources */,
+				B12377921B326A7A00EC7934 /* StumblrDarkBlueMapPin.png in Resources */,
 				B19FD9501B2161C6003C08CA /* Main.storyboard in Resources */,
+				B123778A1B32689300EC7934 /* light.png in Resources */,
 				B19FD9551B2161C6003C08CA /* LaunchScreen.xib in Resources */,
+				B123778B1B32689300EC7934 /* lighter.png in Resources */,
 				B19FD9521B2161C6003C08CA /* Images.xcassets in Resources */,
 				B19538091B285E2B005AA0FA /* pinGreen.png in Resources */,
 				B195380B1B285E2B005AA0FA /* pinPurple.png in Resources */,
+				B12377811B32337F00EC7934 /* SliderImage.png in Resources */,
+				B12377891B32689300EC7934 /* darker.png in Resources */,
+				B181D2C71B3414EB0098B7C2 /* user.png in Resources */,
 				B195380C1B285E2B005AA0FA /* pinRed.png in Resources */,
+				B123778F1B326A0600EC7934 /* SliderImageBlue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,9 +367,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B19FD94D1B2161C6003C08CA /* ViewController.swift in Sources */,
-				B19FD9701B23CEBD003C08CA /* PersonProfileView.swift in Sources */,
 				B19FD96B1B235B22003C08CA /* PinAnnotation.swift in Sources */,
 				B19538021B285A04005AA0FA /* UIImageExtension.swift in Sources */,
+				B12377941B32725C00EC7934 /* ProfileCardView.swift in Sources */,
 				B19FD94B1B2161C6003C08CA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

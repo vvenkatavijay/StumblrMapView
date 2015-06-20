@@ -13,7 +13,11 @@ class PinAnnotation: NSObject, MKAnnotation {
     let locationName: String
     let discipline: String
     let coordinate: CLLocationCoordinate2D
+    let firstName: String
+    let lastName: String
+    let profileImage = UIImage(named: "user.png")
     var interests = [String]()
+    var numInterests: Int!
     
     init(title: String, locationName: String, discipline: String, coordinate: CLLocationCoordinate2D, interests: [String]) {
         self.title = title
@@ -21,6 +25,9 @@ class PinAnnotation: NSObject, MKAnnotation {
         self.discipline = discipline
         self.coordinate = coordinate
         self.interests = interests
+        self.firstName = title
+        self.lastName = title
+       // self.profileImage =
         
         super.init()
     }
@@ -45,25 +52,25 @@ class PinAnnotation: NSObject, MKAnnotation {
         
         
         if Float(numInterests) < matchSliderValue * 4 {
-            alphaValue = 0.05
+            alphaValue = 0
         } else {
             alphaValue = 1
         }
         
-        
+        self.numInterests = numInterests
         
         switch numInterests {
         case 0:
-            pinColor = "pinGray.png"
+            pinColor = "light.png"
             break
         case 1:
-            pinColor = "pinPurple.png"
+            pinColor = "pinGreen.png"
             break
         case 2:
-            pinColor = "pinOrange.png"
+            pinColor = "StumblrDarkBlueMapPin.png"
             break
         case 3:
-            pinColor = "pinRed.png"
+            pinColor = "pinGreen.png"
             break
         default:
             pinColor = "pinGreen.png"
