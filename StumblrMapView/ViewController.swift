@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Parse
 
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
@@ -24,6 +25,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     var profileController: ProfileCardView!
     var animator: UIDynamicAnimator!
     
+    let currentUserInterests = ["Photography", "Music"]
+    var userData = [PFObject]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
@@ -38,6 +42,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         animator = UIDynamicAnimator(referenceView: view)
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
@@ -48,31 +53,84 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         self.center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         
+        println("Latitute: \(center.latitude), Longitude: \(center.longitude)")
+        
         self.mapView.setRegion(region, animated: false)
         
         getLocations(center)
-        addPoints()
     }
     
-    func addPoints() {
-        for index in 1...5 {
+    func addUsers(objects: [PFObject]) {
+        if objects != [] {
+            for object in objects {
+                println(object.objectId)
+                let location = object.objectForKey("Location") as! PFGeoPoint
             
-            var interests = [String]()
-            interests.append("\(index)")
-            interests.append("\(index+1)")
+                let userLocation = CLLocationCoordinate2D(latitude: location.latitude, longitude:location.longitude)
             
-            var point = PinAnnotation(title: "Friend \(index)", locationName: "Home", discipline: "Poker", coordinate: locationArray[index-1], interests: interests)
+                self.locationArray.append(userLocation)
+                
+                let interests = object.objectForKey("Interests") as! [String]
             
-            self.mapView.addAnnotation(point)
+                println(interests)
+                
+                let userName = object.objectForKey("username") as! String
+            
+                var point = PinAnnotation(title: "\(userName)", locationName: "Home", discipline: "Poker", coordinate: userLocation, interests: interests)
+            
+                self.mapView.addAnnotation(point)
+            }
+        } else {
+            for index in 1...5 {
+                
+                let delta = 0.002 * (Double(index) - 2.5)
+                let randLocation = CLLocationCoordinate2D(latitude: center.latitude + delta, longitude:center.longitude + delta )
+                self.locationArray.append(randLocation)
+            }
+            
+            for index in 1...5 {
+                
+                var interests = [String]()
+                interests.append("\(index)")
+                interests.append("\(index+1)")
+                
+                var point = PinAnnotation(title: "Friend \(index)", locationName: "Home", discipline: "Poker", coordinate: self.locationArray[index-1], interests: interests)
+                
+                self.mapView.addAnnotation(point)
+            }
+
         }
     }
     
     func getLocations(center: CLLocationCoordinate2D) {
-        for index in 1...5 {
+        
+        let currentUserLocation = PFGeoPoint(latitude: center.latitude, longitude: center.longitude)
+        
+        let edgePoints = self.mapView.edgePoints()
+        
+        println("\(edgePoints.ne.latitude), \(edgePoints.sw.longitude)")
+        
+        var query = PFQuery(className:"_User")
+        query.whereKey("Location", withinGeoBoxFromSouthwest:edgePoints.sw, toNortheast:edgePoints.ne)
+        
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
             
-            let delta = 0.002 * (Double(index) - 2.5)
-            let randLocation = CLLocationCoordinate2D(latitude: center.latitude + delta, longitude:center.longitude + delta )
-            locationArray.append(randLocation)
+            if error == nil {
+                // The find succeeded.
+                println("Successfully retrieved \(objects!.count) users.")
+                // Do something with the found objects
+                
+                if let objects = objects as? [PFObject] {
+                    
+                    self.userData = objects
+                    self.addUsers(objects)
+                }
+            } else {
+                // Log details of the failure
+                println("Error: \(error!) \(error!.userInfo!)")
+                
+            }
         }
     }
     
@@ -90,7 +148,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                 view.canShowCallout = true
                 view.calloutOffset = CGPoint(x: -5, y: 5)
                 view.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as! UIView
-                view.image = annotation.getPinImageOfFriend(["2", "3", "4"], matchSliderValue: self.matchSlider.value)
+                view.image = annotation.getPinImageOfFriend(currentUserInterests, matchSliderValue: self.matchSlider.value)
             
                 let userImage = UIImage(named: "twitter.png")
                 var leftIconView = UIImageView(image: userImage)
@@ -116,7 +174,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     @IBAction func onMatchValueChanged(sender: AnyObject) {
         println("Value did change called")
         mapView.removeAnnotations(mapView.annotations)
-        self.addPoints()
+        self.addUsers(userData)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -187,7 +245,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                     Int64(0.4 * Double(NSEC_PER_SEC))
                 ),
                 
-                dispatch_get_main_queue(), {    
+                dispatch_get_main_queue(), {
                     self.profileController.removeFromParentViewController()
                     self.profileController = nil
             })

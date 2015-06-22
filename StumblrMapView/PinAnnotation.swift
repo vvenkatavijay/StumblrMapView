@@ -37,8 +37,8 @@ class PinAnnotation: NSObject, MKAnnotation {
     }
     
     func getPinImageOfFriend(userInterests: [String], matchSliderValue: Float) -> UIImage {
-        println("Value from User: \(userInterests)")
-        println("Value from Friends: \(self.interests)")
+        //println("Value from User: \(userInterests)")
+        //println("Value from Friends: \(self.interests)")
         
         var numInterests = 0
         var pinColor: String
